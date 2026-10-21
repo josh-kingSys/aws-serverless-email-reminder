@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Send yourself an email reminder.">
+    <title>Email Reminder</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    >
+    <link href="main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="form-signin">
+        <h2 class="form-signin-heading text-center">Email Reminder</h2>
+        <p class="text-center">
+          Set a reminder for anything and receive it by email.
+        </p>
+
+        <div id="error-message"></div>
+        <div id="success-message"></div>
+
+        <label for="waitSeconds">Remind me in (seconds)</label>
+        <input
+          type="text"
+          id="waitSeconds"
+          class="form-control"
+          placeholder="For example, 300 for 5 minutes"
+        >
+
+        <label for="message" class="mt-3">Reminder message</label>
+        <input
+          type="text"
+          id="message"
+          class="form-control"
+          placeholder="What would you like to remember?"
+        >
+
+        <label for="email" class="mt-3">Email address</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="you@example.com"
+        >
+
+        <button
+          id="emailButton"
+          class="btn btn-md btn-primary btn-block mt-4"
+          type="submit"
+        >
+          Send Reminder
+        </button>
+
+        <div id="results-message"></div>
+      </form>
+    </div>
+
+    <script src="serverless.js"></script>
+  </body>
+</html>
