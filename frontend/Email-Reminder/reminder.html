@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email Reminder</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="reminder.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Email Reminder</h1>
+    <p>To: <span id="recipient">No recipient selected</span></p>
+    <a href="index.html">Change recipient</a>
+
+    <form id="reminder-form">
+      <fieldset>
+        <legend>When should the message be sent?</legend>
+        <label class="choice">
+          <input id="send-now" type="radio" name="timing" value="now" checked>
+          Send now
+        </label>
+        <label class="choice">
+          <input id="send-later" type="radio" name="timing" value="later">
+          Send later
+        </label>
+
+        <div id="schedule-fields" hidden>
+          <label for="send-date">Date</label>
+          <input id="send-date" type="date" disabled>
+          <label for="send-time">Time</label>
+          <input id="send-time" type="time" disabled>
+          <p id="timezone"></p>
+        </div>
+      </fieldset>
+
+      <label class="choice">
+        <input id="custom-subject" type="checkbox">
+        Add a custom subject
+      </label>
+
+      <div id="subject-fields" hidden>
+        <label for="subject">Subject</label>
+        <input id="subject" type="text" disabled>
+      </div>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="8" required></textarea>
+
+      <button id="send-button" type="submit">Send reminder</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
